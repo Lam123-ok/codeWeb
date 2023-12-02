@@ -21,7 +21,7 @@ const generalRefreshToken = async (payload) => {
 const refreshTokenJwtService = (token) => {
   return new Promise( (resolve, reject)=>{
     try {
-      console.log('token', token);
+      // console.log('token', token);
       jwt.verify(token, process.env.REFRESH_TOKEN, async(err, user) =>{
         if(err){
           resolve({
@@ -33,7 +33,7 @@ const refreshTokenJwtService = (token) => {
           id:user?.id,
           isAdmin: user?.isAdmin
         })
-        console.log('access-token', access_token);
+        // console.log('access-token', access_token);
         resolve({
           status: 'OK',
           message: 'Tìm thấy dữ liệu người dùng',
